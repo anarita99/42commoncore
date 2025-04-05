@@ -15,11 +15,11 @@ char *ft_strncpy(char *dest, char *src, unsigned int size)
     }
     return (dest);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 int main(void)
 {
     unsigned int size = 2;
     char dest[100];
     char src[] = "HEllo";
     printf("%s\n", ft_strncpy(dest, src, size));
-}
+} */
