@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 14:28:54 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 14:12:45 by adores           ###   ########.fr       */
+/*   Created: 2025/04/11 10:09:41 by adores            #+#    #+#             */
+/*   Updated: 2025/04/11 10:37:49 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t num)
 {
-	size_t			i;
-	unsigned char	*ptr;
+	size_t	i;
 
 	i = 0;
-	ptr = (unsigned char *)str;
-	while (i < n)
+	while ((str1[i] || str2[i]) && i < num)
 	{
-		ptr[i] = (unsigned char)c;
+		if (str1[i] != str2[i])
+		{
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		}
 		i++;
 	}
-	return(str);
+	return(0);
 }
-/* #include <stdio.h>
-int main(void)
-{
-	char str[26] = "hello world";
-	printf("%s\n", str);
-	ft_memset(str, '#', 3);
-	printf("After memset: %s\n", str);
-} */

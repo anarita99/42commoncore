@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 14:28:54 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 14:12:45 by adores           ###   ########.fr       */
+/*   Created: 2025/04/10 12:47:35 by adores            #+#    #+#             */
+/*   Updated: 2025/04/11 10:04:37 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	size_t			i;
-	unsigned char	*ptr;
+	int	i;
 
-	i = 0;
-	ptr = (unsigned char *)str;
-	while (i < n)
+	i = ft_strlen(str);
+	while(i >= 0)
 	{
-		ptr[i] = (unsigned char)c;
-		i++;
+		if (str[i] == (char)c)
+			return((char *)(str + i));
+		i--;
 	}
-	return(str);
+	if (str[i] == (char)c)
+		return((char *)(str + i));
+	return (NULL);
 }
-/* #include <stdio.h>
-int main(void)
+/* int	main(void)
 {
-	char str[26] = "hello world";
-	printf("%s\n", str);
-	ft_memset(str, '#', 3);
-	printf("After memset: %s\n", str);
+	const char str[] = "ohote";
+	printf("%s\n", ft_strrchr(str, 'o'));
 } */

@@ -6,18 +6,21 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:27:30 by adores            #+#    #+#             */
-/*   Updated: 2025/03/13 14:27:33 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/11 10:01:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-    int i;
-    
+    size_t i;
+
     i = 0;
     while(str[i] != '\0')
-    {
-    	i++;
-    }
+	{
+		i++;
+	}
 	return(i);
 }
+

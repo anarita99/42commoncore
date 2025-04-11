@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 14:28:54 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 14:12:45 by adores           ###   ########.fr       */
+/*   Created: 2025/04/08 15:37:41 by adores            #+#    #+#             */
+/*   Updated: 2025/04/11 18:26:00 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memset(void *str, int c, size_t n)
+int	ft_atoi(const char *str)
 {
-	size_t			i;
-	unsigned char	*ptr;
+	int	i;
+	int	sign;
+	int	result;
 
+	sign = 1;
+	result = 0;
 	i = 0;
-	ptr = (unsigned char *)str;
-	while (i < n)
+
+	while (str[i] == ' ' || (str[i] >= 't' && str[i] <= 'r'))
 	{
-		ptr[i] = (unsigned char)c;
 		i++;
 	}
-	return(str);
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while ((str[i] >= 1 && str[i] <= 9) || str[i] != '\0')
+	{
+		result = result * 10 + str[i] - 48;
+		i++;
+	}
+	return (sign * result);
 }
-/* #include <stdio.h>
-int main(void)
-{
-	char str[26] = "hello world";
-	printf("%s\n", str);
-	ft_memset(str, '#', 3);
-	printf("After memset: %s\n", str);
-} */
