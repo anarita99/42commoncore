@@ -1,49 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 18:04:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/13 16:22:33 by adores           ###   ########.fr       */
+/*   Created: 2025/04/13 16:33:35 by adores            #+#    #+#             */
+/*   Updated: 2025/04/13 17:24:21 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	i;
 
 	i = 0;
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d > s)
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	if (!src)
+		return (0);
+	while ((dstsize -1) > i && src[i] != '\0')
 	{
-		while (n-- > 0)
-			d[n] = s[n];
+		dst[i] = src[i];
+		i++;
 	}
-	else
-	{
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dest);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
-#include <stdio.h>
+/* #include <stdio.h>
+
 int main(void)
 {
-	char str[] = "123456";
+	char *source = "HELLOOOOO";
+	char dest[25];
+	size_t copied;
 
-	ft_memmove(str + 2, str, 4);
-
-	printf("str = %s\n", str);
-}
+    copied = ft_strlcpy(dest, source, 5);
+    printf("Resultado: %s, len = %zu\n", dest, copied);
+} */

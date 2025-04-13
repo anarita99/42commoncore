@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 18:04:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/13 16:22:33 by adores           ###   ########.fr       */
+/*   Created: 2025/04/13 15:43:38 by adores            #+#    #+#             */
+/*   Updated: 2025/04/13 16:34:55 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	i;
+	unsigned char *str1;
+	unsigned char *str2;
+
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 
 	i = 0;
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d > s)
+	while (i < n)
 	{
-		while (n-- > 0)
-			d[n] = s[n];
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
 	}
-	else
-	{
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dest);
+	return (0);
 }
-#include <stdio.h>
+/* #include <stdio.h>
+#include <string.h>
 int main(void)
 {
-	char str[] = "123456";
-
-	ft_memmove(str + 2, str, 4);
-
-	printf("str = %s\n", str);
-}
+	char *string1 = "HELLO";
+	char *string2 = "HOLLO";
+	printf("%d\n", ft_memcmp(string1, string2, 3));
+	printf("%d\n", memcmp(string1, string2, 3));
+} */
