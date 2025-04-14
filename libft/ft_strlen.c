@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:27:30 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 10:01:56 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 13:16:18 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 size_t	ft_strlen(const char *str)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while(str[i] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }
-

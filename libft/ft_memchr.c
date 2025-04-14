@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 12:47:01 by adores            #+#    #+#             */
-/*   Updated: 2025/04/13 13:10:24 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 09:58:58 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*temps;
 	unsigned char	tempc;
 	size_t			i;
-	
+
 	temps = (unsigned char *)s;
 	tempc = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
 		if (temps[i] == tempc)
-			return (void *)&temps[i];
+			return ((void *)&temps[i]);
 		i++;
 	}
 	return (NULL);

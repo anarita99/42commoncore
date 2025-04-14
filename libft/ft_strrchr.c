@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:47:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 10:04:37 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 13:19:09 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*ft_strrchr(const char *str, int c)
 	int	i;
 
 	i = ft_strlen(str);
-	while(i >= 0)
+	while (i >= 0)
 	{
 		if (str[i] == (char)c)
-			return((char *)(str + i));
+			return ((char *)(str + i));
 		i--;
 	}
 	if (str[i] == (char)c)
-		return((char *)(str + i));
+		return ((char *)(str + i));
 	return (NULL);
 }
 /* int	main(void)

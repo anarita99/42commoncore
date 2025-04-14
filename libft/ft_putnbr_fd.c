@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:16:32 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 10:01:58 by adores           ###   ########.fr       */
+/*   Created: 2025/04/14 14:19:58 by adores            #+#    #+#             */
+/*   Updated: 2025/04/14 14:57:26 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (str == NULL)
-		return (NULL);
-	while (str[i] != '\0')
+	if (n == -2147483648)
 	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return;
 	}
-	if (str[i] == c)
-		return ((char *)(str + i));
-	return (NULL);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = - n;
+	}
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd(n % 10 + 48, fd);
 }
-/* #include <stdio.h>
-int main(void)
+/* int main(void)
 {
-	char str[] = "HELLO";
-	printf("%s\n", ft_strchr(str, '\0'));
+	ft_putnbr_fd(-2147483648, 1);
 } */

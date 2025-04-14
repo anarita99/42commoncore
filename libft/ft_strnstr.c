@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 10:44:28 by adores            #+#    #+#             */
-/*   Updated: 2025/04/13 12:48:26 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 13:22:22 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	if (!needle[0])
-		return (char *)haystack;
+		return ((char *)haystack);
 	while (haystack[i] != '\0' && i < len)
 	{
 		j = 0;
-		while((i + j) < len && haystack[i + j] && needle[j] && haystack[i + j] == needle[j])
+		while ((i + j) < len && haystack[i + j] && needle[j]
+			&& haystack[i + j] == needle[j])
 		{
 			j++;
 		}
@@ -31,7 +32,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			return ((char *)haystack + i);
 		i++;
 	}
-	return(0);
+	return (0);
 }
 /*#include <stdio.h>
 
@@ -47,4 +48,3 @@ int main(void)
 	else
 		printf("Não encontrado\n");
 }*/
-

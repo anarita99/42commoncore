@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:16:32 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 10:01:58 by adores           ###   ########.fr       */
+/*   Created: 2025/04/14 12:58:55 by adores            #+#    #+#             */
+/*   Updated: 2025/04/14 13:02:15 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (str == NULL)
-		return (NULL);
-	while (str[i] != '\0')
-	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
-		i++;
-	}
-	if (str[i] == c)
-		return ((char *)(str + i));
-	return (NULL);
+	write(fd, &c, 1);
 }
-/* #include <stdio.h>
-int main(void)
-{
-	char str[] = "HELLO";
-	printf("%s\n", ft_strchr(str, '\0'));
-} */
+/*0 - entrada padrao (nao escreve nada), 1 - saida padrao, 2 - erro padrao */

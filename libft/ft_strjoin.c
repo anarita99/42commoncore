@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:16:32 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 10:01:58 by adores           ###   ########.fr       */
+/*   Created: 2025/04/14 12:05:40 by adores            #+#    #+#             */
+/*   Updated: 2025/04/14 13:21:30 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	size_t	newstrlen;
+	int		i;
+	int		j;
+	char	*newstr;
 
-	i = 0;
-	if (str == NULL)
+	newstrlen = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
+	newstr = (char *)malloc(sizeof(char) * newstrlen);
+	if (!newstr)
 		return (NULL);
-	while (str[i] != '\0')
-	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
-		i++;
-	}
-	if (str[i] == c)
-		return ((char *)(str + i));
-	return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[i] != '\0')
+		newstr[j++] = s1[i++];
+	i = 0;
+	while (s2[i] != '\0')
+		newstr[j++] = s2[i++];
+	newstr[j] = '\0';
+	return (newstr);
 }
 /* #include <stdio.h>
 int main(void)
 {
-	char str[] = "HELLO";
-	printf("%s\n", ft_strchr(str, '\0'));
+	char str1[] = "HELLO ";
+	char str2[] = "WORLD";
+	printf("%s\n", ft_strjoin(str1, str2));
 } */

@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:16:32 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 10:01:58 by adores           ###   ########.fr       */
+/*   Created: 2025/04/14 13:05:35 by adores            #+#    #+#             */
+/*   Updated: 2025/04/14 13:10:04 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
-	if (str == NULL)
-		return (NULL);
-	while (str[i] != '\0')
+	while(s[i] != '\0')
 	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	if (str[i] == c)
-		return ((char *)(str + i));
-	return (NULL);
 }
-/* #include <stdio.h>
-int main(void)
+/* int	main(void)
 {
-	char str[] = "HELLO";
-	printf("%s\n", ft_strchr(str, '\0'));
+	char *str = "HELLO";
+	ft_putstr_fd(str, 1);
 } */

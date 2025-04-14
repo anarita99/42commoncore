@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:04:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/13 16:22:33 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 09:50:50 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 int main(void)
 {
 	char str[] = "123456";
@@ -46,4 +46,4 @@ int main(void)
 	ft_memmove(str + 2, str, 4);
 
 	printf("str = %s\n", str);
-}
+} */

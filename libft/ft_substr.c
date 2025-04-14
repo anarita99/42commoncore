@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 12:24:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 09:54:04 by adores           ###   ########.fr       */
+/*   Created: 2025/04/14 09:46:47 by adores            #+#    #+#             */
+/*   Updated: 2025/04/14 13:21:01 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	mult;
-	void	*ptr;
+	size_t	slen;
+	size_t	i;
+	char	*substr;
 
-	if (nitems == 0 || size == 0)
-		return (malloc(0));
-	mult = nitems * size;
-	if (nitems > INT_MAX / size)
+	if (!s)
 		return (NULL);
-	ptr = malloc(mult);
-	if (!ptr)
+	slen = ft_strlen((char *)s);
+	if (start >= slen)
+		return (ft_strdup(""));
+	if (len > slen - start)
+		len = slen - start;
+	substr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!substr)
 		return (NULL);
-	ft_bzero(ptr, mult);
-	return (ptr);
+	i = 0;
+	while (i < len)
+	{
+		substr[i] = s[start + i];
+		i++;
+	}
+	substr[i] = '\0';
+	return (substr);
 }
 /* #include <stdio.h>
-
-int main(void)
+int main (void)
 {
-	char *ptr;
-
-	ptr = "Hello";
-	printf("%s\n", ptr);
-	
-	ptr = (char*)ft_calloc(5,1);
-	if(ptr)
-		printf("PAssou\n");
-	printf("%s", ptr);
+	char	str[] = "HELLO WORLD";
+	printf("%s\n", ft_substr(str, 3, 5));
 } */

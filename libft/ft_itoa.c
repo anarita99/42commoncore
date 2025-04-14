@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 10:16:32 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 10:01:58 by adores           ###   ########.fr       */
+/*   Created: 2025/04/14 15:17:13 by adores            #+#    #+#             */
+/*   Updated: 2025/04/14 16:55:27 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strchr(const char *str, int c)
+static long	ft_countn(long n)
 {
-	int	i;
+	long	i;
 
 	i = 0;
-	if (str == NULL)
-		return (NULL);
-	while (str[i] != '\0')
+	if (n < 0)
+		i++;
+	if (n == 0)
+		return (1);
+	while (n != 0)
 	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
+		n = n / 10;
 		i++;
 	}
-	if (str[i] == c)
-		return ((char *)(str + i));
-	return (NULL);
+	return (i);
 }
-/* #include <stdio.h>
+char	*ft_itoa(int n)
+{
+	char	*numstr;
+	int		i;
+	int		countnum;
+	
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	numstr = (char *)malloc(sizeof(char) * (ft_countn(n) + 1));
+	
+}
+#include <stdio.h>
 int main(void)
 {
-	char str[] = "HELLO";
-	printf("%s\n", ft_strchr(str, '\0'));
-} */
+	int i = -10;
+	printf("%d\n", ft_countn(i));
+}

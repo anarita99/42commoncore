@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 10:09:41 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 10:37:49 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 13:16:58 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	ft_strncmp(const char *str1, const char *str2, size_t num)
 		}
 		i++;
 	}
-	return(0);
+	return (0);
 }

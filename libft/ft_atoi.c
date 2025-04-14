@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 15:37:41 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 18:26:00 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 09:52:26 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	result = 0;
 	i = 0;
-
 	while (str[i] == ' ' || (str[i] >= 't' && str[i] <= 'r'))
 	{
 		i++;

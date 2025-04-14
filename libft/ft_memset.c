@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:28:54 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 14:12:45 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 10:00:46 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memset(void *str, int c, size_t n)
 		ptr[i] = (unsigned char)c;
 		i++;
 	}
-	return(str);
+	return (str);
 }
 /* #include <stdio.h>
 int main(void)

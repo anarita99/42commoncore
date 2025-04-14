@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 17:29:51 by adores            #+#    #+#             */
-/*   Updated: 2025/04/13 18:07:05 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 10:04:50 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dest_len + i] = '\0';
 	return (dest_len + src_len);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main(void)
 {
-    char dest[5] = "abc";
-    char src[] = "defg";
+	char dest[5] = "abc";
+	char src[] = "defg";
 	size_t size = 5;
 
-    printf("Tamanho final: %zu\n", ft_strlcat(dest, src, size));
-    printf("Resultado: %s\n", dest);
-}
+	printf("Tamanho final: %zu\n", ft_strlcat(dest, src, size));
+	printf("Resultado: %s\n", dest);
+} */

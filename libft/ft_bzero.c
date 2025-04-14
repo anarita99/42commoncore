@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:13:11 by adores            #+#    #+#             */
-/*   Updated: 2025/04/11 14:49:12 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/14 09:53:18 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	ptr = (unsigned char *)s;
-	while(i < n)
+	while (i < n)
 	{
 		ptr[i] = 0;
 		i++;
