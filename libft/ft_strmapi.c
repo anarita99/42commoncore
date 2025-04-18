@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:28:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/15 12:07:23 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 17:03:02 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char	*newstr;
+	char			*newstr;
 
 	if (!s || !f)
 		return (NULL);
 	newstr = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if(!newstr)
+	if (!newstr)
 		return (NULL);
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		newstr[i] = f(i, s[i]);
 		i++;

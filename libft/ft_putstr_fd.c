@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 13:05:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 13:10:04 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 16:39:09 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		ft_putchar_fd(s[i], fd);
 		i++;

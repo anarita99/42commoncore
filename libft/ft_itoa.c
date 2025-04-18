@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:17:13 by adores            #+#    #+#             */
-/*   Updated: 2025/04/15 15:36:53 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 16:57:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ static long	ft_countn(long n)
 	}
 	return (i);
 }
+
 char	*ft_itoa(int n)
 {
 	char	*numstr;
 	int		intlen;
 	long	num;
-	
+
 	num = n;
 	if (num == 0)
 		return (ft_strdup("0"));
@@ -49,7 +50,7 @@ char	*ft_itoa(int n)
 		numstr[0] = '-';
 	}
 	numstr[intlen] = '\0';
-	while(num != 0)
+	while (num != 0)
 	{
 		numstr[--intlen] = (num % 10) + 48;
 		num = num / 10;

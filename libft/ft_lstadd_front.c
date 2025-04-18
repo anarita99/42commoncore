@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:02:47 by adores            #+#    #+#             */
-/*   Updated: 2025/04/17 10:42:28 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 17:02:05 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
-		return;
+		return ;
 	new -> next = *lst;
 	*lst = new;
 }

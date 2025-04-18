@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:03:13 by adores            #+#    #+#             */
-/*   Updated: 2025/04/17 11:21:09 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 16:50:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while(lst->next)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }

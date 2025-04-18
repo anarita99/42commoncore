@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:35:37 by adores            #+#    #+#             */
-/*   Updated: 2025/04/15 11:48:22 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 16:58:49 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	if (!s || !f)
-		return;
+		return ;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		f(i,&s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }

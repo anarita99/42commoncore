@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:59:46 by adores            #+#    #+#             */
-/*   Updated: 2025/04/17 10:43:00 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 16:50:41 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	count;
 
 	count = 0;
-	while(lst)
+	while (lst)
 	{
 		count++;
 		lst = lst -> next;

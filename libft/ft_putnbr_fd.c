@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:19:58 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 14:57:26 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 16:57:21 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == -2147483648)
 	{
 		ft_putstr_fd("-2147483648", fd);
-		return;
+		return ;
 	}
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n = - n;
+		n = -n;
 	}
 	if (n > 9)
 		ft_putnbr_fd(n / 10, fd);

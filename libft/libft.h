@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:44:00 by adores            #+#    #+#             */
-/*   Updated: 2025/04/17 11:23:15 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/17 16:55:52 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <limits.h>
 # include <unistd.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void	*content;
-	struct	s_list *next;
-} t_list;
+	void			*content;
+	struct	s_list	*next;
+}	t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
