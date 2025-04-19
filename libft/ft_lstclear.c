@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 11:26:41 by adores            #+#    #+#             */
-/*   Updated: 2025/04/18 19:17:35 by adores           ###   ########.fr       */
+/*   Created: 2025/04/18 19:37:05 by adores            #+#    #+#             */
+/*   Updated: 2025/04/19 14:37:01 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*last;
+	t_list	*temp;
 
-	if (!lst || !new)
+	if (!lst || !del)
 		return ;
-	if (lst == NULL)
+	while(*lst)
 	{
-		*lst = new;
-		return ;
+		temp = (*lst) -> next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
 	}
-	last = *lst;
-	while (last -> next)
-	{
-		last = last -> next;
-	}
-	last -> next = new;
+	*lst = NULL;
 }
-/* #include <stdio.h>
-int main(void)
-{
-	t_list *head = ft_lstnew("first");
-	t_list *nd1 = ft_lstnew("Second");
-	ft_lstadd_back(&head, nd1);
-	printf("%s\n", (char *)head->next->content);
-} */

@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:33:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/13 17:24:21 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/19 14:15:30 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		return (ft_strlen(src));
 	if (!src)
 		return (0);
-	while ((dstsize -1) > i && src[i] != '\0')
+	while ((dstsize - 1) > i && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
