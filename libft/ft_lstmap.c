@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 15:18:43 by adores            #+#    #+#             */
-/*   Updated: 2025/04/19 15:47:36 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/21 12:30:37 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_node;
 	void	*content;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	new_list = NULL;
 	while (lst)
