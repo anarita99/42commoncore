@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:44:00 by adores            #+#    #+#             */
-/*   Updated: 2025/04/19 15:50:36 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/21 09:50:29 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct s_list
 {
 	void			*content;
-	struct	s_list	*next;
+	struct s_list	*next;
 }	t_list;
 
 int		ft_atoi(const char *str);

@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:26:41 by adores            #+#    #+#             */
-/*   Updated: 2025/04/18 19:17:35 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/21 10:09:28 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	if (lst == NULL)
+	if (*lst == NULL)
 	{
 		*lst = new;
 		return ;

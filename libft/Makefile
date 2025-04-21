@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 10:56:36 by adores            #+#    #+#              #
-#    Updated: 2025/04/19 15:52:47 by adores           ###   ########.fr        #
+#    Updated: 2025/04/21 10:04:57 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 		ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
-BONUS = lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 		ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c 
 
 OBJ_BONUS = $(BONUS:.c=.o)

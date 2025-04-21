@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 19:37:05 by adores            #+#    #+#             */
-/*   Updated: 2025/04/19 14:37:01 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/21 09:49:01 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	if (!lst || !del)
 		return ;
-	while(*lst)
+	while (*lst)
 	{
-		temp = (*lst) -> next;
+		temp = (*lst)-> next;
 		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
