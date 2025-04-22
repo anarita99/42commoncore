@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 10:56:36 by adores            #+#    #+#              #
-#    Updated: 2025/04/21 10:04:57 by adores           ###   ########.fr        #
+#    Updated: 2025/04/22 16:43:02 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,9 @@ $(NAME): $(OBJ)
 %.o: %.c
 	${CC} ${CFLAGS} -c -o $@ $<
 
-bonus: all $(OBJ_BONUS)
+bonus: $(OBJ) $(OBJ_BONUS)
 	$(AR) $(NAME) $(OBJ_BONUS)
+	@touch bonus
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
