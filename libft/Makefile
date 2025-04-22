@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/11 10:56:36 by adores            #+#    #+#              #
-#    Updated: 2025/04/22 16:43:02 by adores           ###   ########.fr        #
+#    Updated: 2025/04/22 16:46:50 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ bonus: $(OBJ) $(OBJ_BONUS)
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
+	@rm bonus
 
 fclean: clean
 	$(RM) $(NAME)
