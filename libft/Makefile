@@ -49,7 +49,7 @@ bonus: $(OBJ) $(OBJ_BONUS)
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
-	@rm bonus
+	@rm -f bonus
 
 fclean: clean
 	$(RM) $(NAME)
