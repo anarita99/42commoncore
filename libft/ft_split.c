@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:19:48 by adores            #+#    #+#             */
-/*   Updated: 2025/04/17 17:01:14 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/23 15:19:41 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ char	**ft_split(char const *s, char c)
 	ft_splitsplit(arr, (char *)s, c);
 	return (arr);
 }
-/*#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -126,5 +126,5 @@ int	main(void)
 		printf("%s\n",res[i]);
 		i++;
 	}
-}
-*/
+} */
+

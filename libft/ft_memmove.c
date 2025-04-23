@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:04:35 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 09:50:50 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/23 15:27:25 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
-	if (!dest && !src)
-		return (NULL);
 	if (d > s)
 	{
 		while (n-- > 0)

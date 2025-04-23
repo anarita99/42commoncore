@@ -6,9 +6,11 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 15:30:37 by adores            #+#    #+#             */
-/*   Updated: 2025/04/14 09:57:30 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/23 15:04:16 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
