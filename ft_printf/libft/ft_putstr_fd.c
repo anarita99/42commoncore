@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 11:10:24 by adores            #+#    #+#             */
-/*   Updated: 2025/04/24 12:24:17 by adores           ###   ########.fr       */
+/*   Created: 2025/04/14 13:05:35 by adores            #+#    #+#             */
+/*   Updated: 2025/04/22 13:54:38 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-
-# define FT_PRINTF_H
-
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "libft.h"
 
-#endif
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
+	if (!s || fd < 0)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+}
+/* int	main(void)
+{
+	char *str = "HELLO";
+	ft_putstr_fd(str, 1);
+} */
