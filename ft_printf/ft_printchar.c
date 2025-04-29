@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 11:10:24 by adores            #+#    #+#             */
-/*   Updated: 2025/04/29 15:02:01 by adores           ###   ########.fr       */
+/*   Created: 2025/04/29 14:59:49 by adores            #+#    #+#             */
+/*   Updated: 2025/04/29 15:00:57 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#include "ft_printf.h"
 
-# define FT_PRINTF_H
-
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "libft.h"
-
-int	ft_printchar(char c);
-int	ft_printstr(char *s);
-
-#endif
+int	ft_printchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}

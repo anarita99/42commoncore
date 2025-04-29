@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printnb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 11:10:24 by adores            #+#    #+#             */
-/*   Updated: 2025/04/29 15:02:01 by adores           ###   ########.fr       */
+/*   Created: 2025/04/29 14:40:54 by adores            #+#    #+#             */
+/*   Updated: 2025/04/29 15:09:51 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#include "ft_printf.h"
 
-# define FT_PRINTF_H
+static int	ft_countn(long n)
+{
+	int	countn;
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "libft.h"
-
-int	ft_printchar(char c);
-int	ft_printstr(char *s);
-
-#endif
+	countn = 0;
+	if (n < 0)
+		countn++;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n = n / 10;
+		countn++;
+	}
+	return (countn);
+}
+int	ft_printnbr(long nb)
+{
+	if (nb < 0)
+	{
+		nb = -nb;
+		ft_printchar('-');
+	}
+	if (nb > 10)
+	{
+		nb = nb / 10;
+		ft_printnbr(nb);
+	}
+	ft_printchar(nb % 10 + 48);
+	return (ft_countn(nb));
+}
