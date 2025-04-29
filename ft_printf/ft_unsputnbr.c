@@ -1,45 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printnb.c                                       :+:      :+:    :+:   */
+/*   ft_unsputnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 14:40:54 by adores            #+#    #+#             */
-/*   Updated: 2025/04/29 15:34:50 by adores           ###   ########.fr       */
+/*   Created: 2025/04/29 15:28:01 by adores            #+#    #+#             */
+/*   Updated: 2025/04/29 15:32:36 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_countn(long n)
+static int	ft_unscount(unsigned int n)
 {
-	int	countn;
+    int i;
 
-	countn = 0;
-	if (n < 0)
-		countn++;
-	if (n == 0)
-		return (1);
-	while (n != 0)
-	{
-		n = n / 10;
-		countn++;
-	}
-	return (countn);
+    i = 0;
+    if (n == 0)
+        return (1);
+    while (n > 0)
+    {
+        n = n / 10;
+        i++;
+    }
+    return (i);
 }
-int	ft_printnbr(long nb)
+int	ft_unsputnbr(unsigned int	n)
 {
-	if (nb < 0)
+	if (n > 9)
 	{
-		nb = -nb;
-		ft_printchar('-');
+		ft_unsputnbr(n / 10);
+		ft_unsputnbr(n % 10);
 	}
-	if (nb >= 10)
-	{
-		nb = nb / 10;
-		ft_printnbr(nb);
-	}
-	ft_printchar(nb % 10 + 48);
-	return (ft_countn(nb));
+	else
+		ft_printchar(n + 48);
+	return (ft_unscount(n));
 }
