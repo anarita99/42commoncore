@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/04/30 11:49:56 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/30 16:11:17 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ int	print_format(char spec, va_list ap)
 		count += ft_printstr(va_arg(ap, char *));
 	else if (spec == 'd')
 		count += ft_printnb(va_arg(ap, int));
+	else if (spec == 'u')
+		count += ft_unsputnbr(va_arg(ap, unsigned int));
+	else if (spec == 'x')
+		count += ft_hexaputnbr(va_arg(ap, unsigned int), 'x');
+	else if (spec == 'X')
+		count += ft_hexaputnbr(va_arg(ap, unsigned int), 'X');
 }
 
 int	ft_printf(const char *format, ...)
