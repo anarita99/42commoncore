@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:24 by adores            #+#    #+#             */
-/*   Updated: 2025/04/29 17:41:42 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/30 11:59:33 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "libft/libft.h"
+# include <stdarg.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include "libft/libft.h"
 
 int	ft_printchar(char c);
 int	ft_printstr(char *s);
 int	ft_printnbr(long nb);
-int	ft_unsputnbr(unsigned int	n);
+int	ft_unsputnbr(unsigned int n);
 
 #endif

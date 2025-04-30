@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 15:28:01 by adores            #+#    #+#             */
-/*   Updated: 2025/04/29 15:32:36 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/30 11:57:45 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 static int	ft_unscount(unsigned int n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (n == 0)
-        return (1);
-    while (n > 0)
-    {
-        n = n / 10;
-        i++;
-    }
-    return (i);
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
 }
-int	ft_unsputnbr(unsigned int	n)
+
+int	ft_unsputnbr(unsigned int n)
 {
 	if (n > 9)
 	{

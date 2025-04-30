@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:38:23 by adores            #+#    #+#             */
-/*   Updated: 2025/04/29 14:39:28 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/30 11:58:09 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_printstr(char *s)
 	int	i;
 
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		write(1, &s[i], 1);
+		write (1, &s[i], 1);
 		i++;
 	}
 	return (i);

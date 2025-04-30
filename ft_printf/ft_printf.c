@@ -6,12 +6,11 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/04/29 15:15:53 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/30 11:49:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 int	print_format(char spec, va_list ap)
 {
@@ -25,6 +24,7 @@ int	print_format(char spec, va_list ap)
 	else if (spec == 'd')
 		count += ft_printnb(va_arg(ap, int));
 }
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	list;
@@ -41,8 +41,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 			i++;
 			if (format[i] == '%')
-				ft_putchar_fd('%', 1);
-				count++;
+				count += ft_printchar('%');
 	}
 	return (count);
 }

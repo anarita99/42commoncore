@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:40:54 by adores            #+#    #+#             */
-/*   Updated: 2025/04/29 15:34:50 by adores           ###   ########.fr       */
+/*   Updated: 2025/04/30 11:49:27 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static int	ft_countn(long n)
 	}
 	return (countn);
 }
+
 int	ft_printnbr(long nb)
 {
 	if (nb < 0)
