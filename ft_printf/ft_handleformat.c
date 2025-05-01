@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:38:23 by adores            #+#    #+#             */
-/*   Updated: 2025/05/01 15:11:47 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/01 15:49:49 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int ft_pointmem(size_t nb)
 	const char *hex = "0123456789abcdef";
 
 	count = 0;
-	if (nb > 15)
+	if (nb >= 16)
 		count += ft_pointmem(nb / 16);
 	count += ft_printchar(hex[nb % 16]);
 	return (count);
@@ -47,10 +47,14 @@ static int ft_pointmem(size_t nb)
 
 static int check_mem(size_t nb)
 {
+	int	count;
+
+	count = 0;
 	if (!nb)
 		return (ft_printstr("(nil)"));
-	else
-		return (ft_printstr("0x") + ft_pointmem(nb));
+	count += ft_printstr("0x");
+	count += ft_pointmem(nb);
+	return (count);
 }
 
 int	ft_handleformat(void *data, char c)

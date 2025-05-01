@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/01 15:12:29 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/01 15:51:33 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,21 @@ int	ft_printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
-int main(void)
+/* int main(void)
 {
 	char str[] = "Hell0";
 	printf("%s\n", str);
 	ft_printf("%s\n", str);
+	printf("%d\n", printf("%s", str));
+	ft_printf("%d\n", ft_printf("%s", str));
+} */
+int main(void)
+{
+    int num = 42; // Variável local
+    static int static_num = 42; // Variável estática
+
+    printf("Testing printf: %d %x %p\n", num, num, (void *)&static_num);
+    ft_printf("Testing ft_printf: %d %x %p\n", num, num, (void *)&static_num);
+
+    return 0;
 }
