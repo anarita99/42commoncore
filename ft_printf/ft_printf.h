@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:24 by adores            #+#    #+#             */
-/*   Updated: 2025/05/01 11:06:12 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/01 12:41:12 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_printstr(char *s);
 int	ft_printnbr(long nb);
 int	ft_unsputnbr(unsigned int n);
 int	ft_hexaputnbr(unsigned int i, unsigned char c);
-int	sortstr(void *data, char c);
+int	handle_format(void *data, char c);
 
 #endif
