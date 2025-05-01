@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_handleformat.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:38:23 by adores            #+#    #+#             */
-/*   Updated: 2025/05/01 13:08:11 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/01 15:11:47 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printstr(char *s)
+static int	ft_printstr(char *s)
 {
 	int	i;
 
@@ -53,7 +53,7 @@ static int check_mem(size_t nb)
 		return (ft_printstr("0x") + ft_pointmem(nb));
 }
 
-int	handle_format(void *data, char c)
+int	ft_handleformat(void *data, char c)
 {
 	if (c == 's')
 		return (check_str((char *)data));

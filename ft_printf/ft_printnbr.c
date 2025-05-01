@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printnb.c                                       :+:      :+:    :+:   */
+/*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:40:54 by adores            #+#    #+#             */
-/*   Updated: 2025/04/30 11:49:27 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/01 15:20:45 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ static int	ft_countn(long n)
 
 int	ft_printnbr(long nb)
 {
+	int	i;
+
+	i = ft_countn(nb);
 	if (nb < 0)
 	{
 		nb = -nb;
@@ -42,5 +45,5 @@ int	ft_printnbr(long nb)
 		ft_printnbr(nb);
 	}
 	ft_printchar(nb % 10 + 48);
-	return (ft_countn(nb));
+	return (i);
 }
