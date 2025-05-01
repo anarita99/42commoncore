@@ -6,7 +6,12 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 11:10:10 by adores            #+#    #+#              #
-#    Updated: 2025/04/24 11:10:11 by adores           ###   ########.fr        #
+#    Updated: 2025/05/01 09:52:13 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libftprintf.a
+
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror

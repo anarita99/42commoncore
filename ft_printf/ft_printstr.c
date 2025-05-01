@@ -6,13 +6,13 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:38:23 by adores            #+#    #+#             */
-/*   Updated: 2025/04/30 11:58:09 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/01 11:05:53 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printstr(char *s)
+static int	ft_printstr(char *s)
 {
 	int	i;
 
@@ -24,3 +24,46 @@ int	ft_printstr(char *s)
 	}
 	return (i);
 }
+
+static int	check_str(char *str)
+{
+	if (!str)
+		return (ft_printstr("(null)"));
+	else
+		return (ft_printstr(str));
+}
+
+static int ft_pointmem(size_t nb)
+{
+	int	count;
+	const char *hex = "0123456789abcdef";
+
+	count = 0;
+	if (nb > 15)
+		count += ft_pointmem(nb / 16);
+	count += ft_printchar(hex[nb % 16]);
+	return (count);
+}
+
+static int check_mem(size_t nb)
+{
+	if (!nb)
+		return (ft_printstr("(nil)"));
+	else
+		return (ft_printstr("0x") + ft_pointmem(nb));
+}
+
+int	sortstr(void *data, char c)
+{
+	if (c == 's')
+		return (check_str((char *)data));
+	else
+		return (check_mem((size_t)data));
+}
+/* int main(void)
+{
+	char *str = "helloo";
+	void *p = (void *)str;
+	printf("%p\n", p);
+	check_mem((size_t)p);
+} */
