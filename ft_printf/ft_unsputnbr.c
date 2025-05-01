@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 15:28:01 by adores            #+#    #+#             */
-/*   Updated: 2025/04/30 14:50:32 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/01 16:16:02 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int	ft_unsputnbr(unsigned int n)
 	count = 0;
 	if (n >= 10)
 		count += ft_unsputnbr(n / 10);
-	ft_printchar((n % 10) + '0');
+	count += ft_printchar((n % 10) + '0');
 	return (count);
 }

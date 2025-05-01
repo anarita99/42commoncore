@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/01 15:51:33 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/01 16:21:07 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	print_format(char spec, va_list ap)
 	if (spec == 'c')
 		count += ft_printchar(va_arg(ap, int));
 	else if (spec == 'd')
+		count += ft_printnbr(va_arg(ap, int));
+	else if (spec == 'i')
 		count += ft_printnbr(va_arg(ap, int));
 	else if (spec == 'u')
 		count += ft_unsputnbr(va_arg(ap, unsigned int));
@@ -51,8 +53,13 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			count += print_format(format[i], list);
+			if (format[i + 1] == '%')
+			{
+				count += ft_printchar ('%');
+				i++;
+			}
+			else
+				count += print_format(format[++i], list);
 		}
 		else
 			count += ft_printchar(format[i]);
@@ -69,7 +76,7 @@ int	ft_printf(const char *format, ...)
 	printf("%d\n", printf("%s", str));
 	ft_printf("%d\n", ft_printf("%s", str));
 } */
-int main(void)
+/* int main(void)
 {
     int num = 42; // Variável local
     static int static_num = 42; // Variável estática
@@ -78,4 +85,4 @@ int main(void)
     ft_printf("Testing ft_printf: %d %x %p\n", num, num, (void *)&static_num);
 
     return 0;
-}
+} */

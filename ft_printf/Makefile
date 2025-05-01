@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 11:10:10 by adores            #+#    #+#              #
-#    Updated: 2025/05/01 15:19:51 by adores           ###   ########.fr        #
+#    Updated: 2025/05/01 16:24:46 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ -c $< -I $(INC)
 
 clean:
-	(RM) $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
