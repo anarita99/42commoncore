@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:38:23 by adores            #+#    #+#             */
-/*   Updated: 2025/05/01 15:49:49 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/02 15:02:10 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ static int	check_str(char *str)
 		return (ft_printstr(str));
 }
 
-static int ft_pointmem(size_t nb)
+static int	ft_pointmem(size_t nb)
 {
-	int	count;
-	const char *hex = "0123456789abcdef";
+	int			count;
+	const char	*hex = "0123456789abcdef";
 
 	count = 0;
 	if (nb >= 16)
@@ -45,7 +45,7 @@ static int ft_pointmem(size_t nb)
 	return (count);
 }
 
-static int check_mem(size_t nb)
+static int	check_mem(size_t nb)
 {
 	int	count;
 

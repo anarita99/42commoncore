@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/01 16:21:07 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/02 15:10:01 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ int	print_format(char spec, va_list ap)
 	else if (spec == 'X')
 		count += ft_hexaputnbr(va_arg(ap, unsigned int), 'X');
 	else if (spec == 's')
-		count += ft_handleformat(va_arg(ap, char*), 's');
+		count += ft_handleformat(va_arg(ap, char *), 's');
 	else if (spec == 'p')
-		count += ft_handleformat(va_arg(ap, void*), 'p');
+		count += ft_handleformat(va_arg(ap, void *), 'p');
+	else if (spec == '%')
+		count += ft_printchar('%');
 	else
 		count += ft_printchar('%') + ft_printchar(spec);
 	return (count);
@@ -53,13 +55,9 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '%')
-			{
-				count += ft_printchar ('%');
-				i++;
-			}
-			else
-				count += print_format(format[++i], list);
+			if (format[i + 1] == '\0')
+				break ;
+			count += print_format(format[++i], list);
 		}
 		else
 			count += ft_printchar(format[i]);
@@ -68,21 +66,12 @@ int	ft_printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
-/* int main(void)
+/*int main(void)
 {
-	char str[] = "Hell0";
-	printf("%s\n", str);
-	ft_printf("%s\n", str);
-	printf("%d\n", printf("%s", str));
-	ft_printf("%d\n", ft_printf("%s", str));
-} */
-/* int main(void)
-{
-    int num = 42; // Variável local
-    static int static_num = 42; // Variável estática
+    int num = 42;
 
-    printf("Testing printf: %d %x %p\n", num, num, (void *)&static_num);
-    ft_printf("Testing ft_printf: %d %x %p\n", num, num, (void *)&static_num);
+    printf("Testing printf: %d %x", num, num);
+    ft_printf("Testing ft_printf: %d %x", num, num);
 
     return 0;
-} */
+}*/
