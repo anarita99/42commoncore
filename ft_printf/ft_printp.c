@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:31:32 by adores            #+#    #+#             */
-/*   Updated: 2025/05/03 11:57:53 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/03 12:15:27 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_printp(size_t nb)
 {
-	const char *hex = "0123456789abcdef";
+	const char	*hex = "0123456789abcdef";
 	int			count;
 
 	count = 0;
@@ -24,7 +24,7 @@ static int	ft_printp(size_t nb)
 	return (count);
 }
 
-int ft_checkp(size_t nb)
+int	ft_checkp(size_t nb)
 {
 	if (!nb)
 		return (ft_printstr("(nil)"));
