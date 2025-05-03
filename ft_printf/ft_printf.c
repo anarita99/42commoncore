@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/02 15:10:01 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/03 11:50:55 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	print_format(char spec, va_list ap)
 	else if (spec == 'X')
 		count += ft_hexaputnbr(va_arg(ap, unsigned int), 'X');
 	else if (spec == 's')
-		count += ft_handleformat(va_arg(ap, char *), 's');
+		count += ft_printstr(va_arg(ap, char *));
 	else if (spec == 'p')
-		count += ft_handleformat(va_arg(ap, void *), 'p');
+		count += ft_checkp(va_arg(ap, size_t));
 	else if (spec == '%')
 		count += ft_printchar('%');
 	else

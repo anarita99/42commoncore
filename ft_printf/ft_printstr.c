@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 11:10:24 by adores            #+#    #+#             */
-/*   Updated: 2025/05/03 11:48:08 by adores           ###   ########.fr       */
+/*   Created: 2025/04/29 14:38:23 by adores            #+#    #+#             */
+/*   Updated: 2025/05/03 11:56:59 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#include "ft_printf.h"
 
-# define FT_PRINTF_H
+int	ft_printstr(char *s)
+{
+	int	i;
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-int	ft_printchar(char c);
-int	ft_printnbr(long nb);
-int	ft_unsputnbr(unsigned int n);
-int	ft_hexaputnbr(unsigned int i, unsigned char c);
-int	ft_printf(const char *format, ...);
-int	ft_printstr(char *s);
-int ft_checkp(size_t nb);
-
-#endif
+	if (!s)
+		return (ft_printstr("(null)"));
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write (1, &s[i], 1);
+		i++;
+	}
+	return (i);
+}
