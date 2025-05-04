@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/03 11:50:55 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/04 11:11:41 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-				break ;
+				return (-1) ;
 			count += print_format(format[++i], list);
 		}
 		else
@@ -68,10 +68,10 @@ int	ft_printf(const char *format, ...)
 }
 /*int main(void)
 {
-    int num = 42;
+    int x;
 
-    printf("Testing printf: %d %x", num, num);
-    ft_printf("Testing ft_printf: %d %x", num, num);
+    x = ft_printf("hello this is going to be a pretty long string to see if this still works%");
+	ft_printf("%d\n", x);
 
     return 0;
 }*/
