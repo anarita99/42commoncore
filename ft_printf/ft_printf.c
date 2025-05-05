@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/04 11:11:41 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/05 11:15:36 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int	print_format(char spec, va_list ap)
 		count += ft_checkp(va_arg(ap, size_t));
 	else if (spec == '%')
 		count += ft_printchar('%');
-	else
-		count += ft_printchar('%') + ft_printchar(spec);
 	return (count);
 }
 
@@ -46,7 +44,7 @@ int	ft_printf(const char *format, ...)
 	int		count;
 	int		i;
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	if (!format || (format[0] == '%' && format[1] == '\0') || write(1, 0, 0) == -1)
 		return (-1);
 	count = 0;
 	i = 0;
@@ -56,7 +54,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-				return (-1) ;
+				return (va_end(list), -1);
 			count += print_format(format[++i], list);
 		}
 		else
@@ -66,12 +64,15 @@ int	ft_printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
-/*int main(void)
+/* int main(void)
 {
     int x;
+	int y;
 
-    x = ft_printf("hello this is going to be a pretty long string to see if this still works%");
-	ft_printf("%d\n", x);
+    x = printf("a pretty blng string to see if %z this still works");
+	printf("%d\n", x);
+	y = ft_printf("a pretty %z blong string to see if this still works");
+	ft_printf("%d\n", y);
 
     return 0;
-}*/
+} */
