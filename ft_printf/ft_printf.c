@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/05 11:15:36 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/05 15:52:46 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	print_format(char spec, va_list ap)
 	else if (spec == 's')
 		count += ft_printstr(va_arg(ap, char *));
 	else if (spec == 'p')
-		count += ft_checkp(va_arg(ap, size_t));
+		count += ft_checkp(va_arg(ap, void *));
 	else if (spec == '%')
 		count += ft_printchar('%');
 	return (count);
@@ -44,8 +44,8 @@ int	ft_printf(const char *format, ...)
 	int		count;
 	int		i;
 
-	if (!format || (format[0] == '%' && format[1] == '\0') || write(1, 0, 0) == -1)
-		return (-1);
+	if (!format || write(1, 0, 0) == -1)
+			return (-1);
 	count = 0;
 	i = 0;
 	va_start(list, format);
@@ -69,10 +69,10 @@ int	ft_printf(const char *format, ...)
     int x;
 	int y;
 
-    x = printf("a pretty blng string to see if %z this still works");
-	printf("%d\n", x);
-	y = ft_printf("a pretty %z blong string to see if this still works");
-	ft_printf("%d\n", y);
+    x = printf("a pretty blng string to see if %wx this still works");
+	printf("\n%d\n", x);
+	y = ft_printf("a pretty %wx blong string to see if this still works ");
+	ft_printf("\n%d\n", y);
 
     return 0;
 } */

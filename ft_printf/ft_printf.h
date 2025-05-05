@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:24 by adores            #+#    #+#             */
-/*   Updated: 2025/05/03 12:14:45 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/05 14:50:37 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_unsputnbr(unsigned int n);
 int	ft_hexaputnbr(unsigned int i, unsigned char c);
 int	ft_printf(const char *format, ...);
 int	ft_printstr(char *s);
-int	ft_checkp(size_t nb);
+int	ft_checkp(void *nb);
 
 #endif
