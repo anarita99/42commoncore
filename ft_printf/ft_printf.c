@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/05 16:09:25 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/05 16:12:13 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_printf(const char *format, ...)
 	int		i;
 
 	if (!format || write(1, 0, 0) == -1)
-			return (-1);
+		return (-1);
 	count = 0;
 	i = 0;
 	va_start(list, format);
@@ -64,4 +64,3 @@ int	ft_printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
-
