@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/05 15:52:46 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/05 16:09:25 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,4 @@ int	ft_printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
-/* int main(void)
-{
-    int x;
-	int y;
 
-    x = printf("a pretty blng string to see if %wx this still works");
-	printf("\n%d\n", x);
-	y = ft_printf("a pretty %wx blong string to see if this still works ");
-	ft_printf("\n%d\n", y);
-
-    return 0;
-} */
