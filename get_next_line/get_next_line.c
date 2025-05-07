@@ -6,7 +6,13 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 12:13:52 by adores            #+#    #+#             */
-/*   Updated: 2025/05/03 12:13:53 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/06 13:04:13 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
+
+char	*get_next_line(int fd)
+{
+	
+}

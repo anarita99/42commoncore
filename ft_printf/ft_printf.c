@@ -6,13 +6,13 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 11:10:01 by adores            #+#    #+#             */
-/*   Updated: 2025/05/05 16:12:13 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/06 14:37:40 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_format(char spec, va_list ap)
+static int	print_format(char spec, va_list ap)
 {
 	int	count;
 
