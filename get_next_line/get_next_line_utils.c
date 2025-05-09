@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 12:13:46 by adores            #+#    #+#             */
-/*   Updated: 2025/05/08 15:06:33 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/08 15:31:37 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,15 @@ char	*ft_strjoingnl(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s1 && s1[i++] != '\0')
-		newstr[i] = s1[i];
-	while (s2 && s2[j] != '\0')
+	while (s1 && s1[i] != '\0')
 	{
-		newstr[i] = s2[j];
+		newstr[i] = s1[i];
 		i++;
-		if (s2[j] == '\n')
-			break ;
-		j++;
 	}
+	while (s2 && s2[j] && s2[j] != '\n')
+		newstr[i++] = s2[j++];
+	if (s2 && s2[j] == '\n')
+		newstr[i++] = '\n';
 	newstr[i] = '\0';
 	free((char *)s1);
 	return (newstr);

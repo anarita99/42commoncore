@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 12:13:52 by adores            #+#    #+#             */
-/*   Updated: 2025/05/08 15:08:24 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/09 10:35:54 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,14 @@ char	*get_next_line(int fd)
 /* #include <stdio.h>
 int main()
 {
+	char *gnl_fd;
 	int fd = open("test.txt", O_RDONLY | O_CREAT);
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
+	while ((gnl_fd = get_next_line(fd)) != NULL)
+	{
+		printf("%s", gnl_fd);
+		free(gnl_fd);	
+	}
+	printf("\n");
 	close(fd);
 } */
 /* HelloWorld
