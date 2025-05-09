@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 12:13:52 by adores            #+#    #+#             */
-/*   Updated: 2025/05/09 10:35:54 by adores           ###   ########.fr       */
+/*   Updated: 2025/05/09 14:38:08 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*get_next_line(int fd)
 	static char	buffer[BUFFER_SIZE];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
 		return (NULL);
 	line = NULL;
 	while (*buffer || read(fd, buffer, BUFFER_SIZE) > 0)
@@ -28,6 +28,7 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
+
 /* #include <stdio.h>
 int main()
 {
